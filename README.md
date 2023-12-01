@@ -25,6 +25,8 @@ Screenshots of your website’s landing page/ gameplay. We need a preview of wha
 
 Timeline: Give us a table with all the project dates, MVP items meant for that day, whether you met your goal Y/N, and any notes about those items
 
+<img width="275" alt="Screen Shot 2023-12-01 at 1 21 52 PM" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/98d1a555-b533-459a-9833-7d73098d1189">
+
 Attributions: Include links to any external resources (such as libraries or assets) you used to develop your application.
 
 Next Steps: 
