@@ -6,11 +6,15 @@ My app is called Time Travel Trivia, a quiz game that challenges players knowled
 
 **Initial Landing View**
 
-![image](https://media.git.generalassemb.ly/user/21811/files/0f7aee00-c1d9-11ea-9dad-de086a5c91fc)
+<img width="752" alt="Menu Screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/b28b209a-9c11-4869-bb9c-19747d67b844">
+
+<img width="751" alt="Game screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/a0be1d0d-3ee7-441a-8da7-a6d1ed7a6d56">
+
 
 **Results View**
 
-![image](https://media.git.generalassemb.ly/user/21811/files/1a358300-c1d9-11ea-95da-6c14aefb0f18)
+<img width="750" alt="Results screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/c92fb1c5-8965-4774-be1c-6a44d5d7b460">
+
 
 ## User Stories
 
