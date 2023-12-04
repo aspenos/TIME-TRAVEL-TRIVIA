@@ -33,14 +33,14 @@ const generalHistoryQuestions = [
         correctAnswer: "1920",
         time = 15,
         
-    }
+    },
     {
         text: "Which country was the first to use paper currency?",
         possibleAnswers: ["China", "Switzerland", "Greece", "France"],
         correctAnswer: "China",
         time = 15,
         
-    },
+    }
     {
         text: "In what year was the Apple iPod released?",
         possibleAnswers: ["2003", "2001", "2005", "2007"],
