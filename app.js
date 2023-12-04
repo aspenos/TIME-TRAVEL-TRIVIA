@@ -50,12 +50,10 @@ const generalHistoryQuestions = [
     }
 ];
 
-//game initialization functions
-//init resets game state. Used when page loads and when "play again" is clicked
-function init() {
+document.addEventListener('DOMContentLoaded', function () {
     renderMainMenu();
-    //TODO: render main menu UI
-}
+});
+
 //render main menu functions
 function renderMainMenu() {
     const container = document.getElementById("game-container");
@@ -63,10 +61,10 @@ function renderMainMenu() {
     <h1>Time Travel Trivia</h1>
     <button onclick="start()">General History</button>
 `;
+
+const startButton = document.getElementById("startButton");
+startButton.addEventListener('click', start);
 }
-
-// add initialization logic
-
 //function to start game
 function start() {
     questions = generalHistoryQuestions;
@@ -83,7 +81,7 @@ function loadQuestionsForCategory(category) {
 function presentQuestion() {
     const container = document.getElementById("game-container");
     const question = questions[currentQuestionIndex];
-    const options = questions.options.map(option => `<li><button onclick="answerSelected('${option}')">${option}</button></li>`).join("");
+    const options = question.options.map(option => `<li><button class="answerButton">${option}</button></li>`).join("");
 
     container.innerHTML = `
     <h2>${question.text}</h2>
@@ -91,6 +89,7 @@ function presentQuestion() {
     <p id="timer">Time Remaining: ${question.time}s</p>
     <p id="result"></p>
 `;
+    startTimer(question.time);
 }
 
 //function to start the timer
