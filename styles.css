@@ -1,15 +1,70 @@
 body {
+    font-family:
+    text-align:
+    background-color
+    margin
+    padding
 
 }
 
 #game-container {
-
-}
+    max-width
+    margin
+    background-color:
+    padding:
+    box-shadow
 
 h1 {
+    color
 
 }
 
 button {
+    margin
+    padding 
+    font-size 
+    cursor 
+    background-color 
+    color 
+    border 
+    border-radius 
 
+}
+
+button:hover {
+    background-color:
+}
+
+u1 {
+    list-style 
+    padding 
+}
+
+li {
+    margin 
+}
+
+button {
+    padding 
+    font-size 
+    cursor 
+    background-color 
+    color 
+    border 
+    border-radius 
+}
+
+button:hover {
+    background-color 
+}
+
+#timer {
+    font-size 
+    color 
+}
+
+#result {
+    font-size 
+    font-weight 
+    margin-top 
 }
