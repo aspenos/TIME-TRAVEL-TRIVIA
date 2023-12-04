@@ -89,6 +89,14 @@ function presentQuestion() {
     <p id="timer">Time Remaining: ${question.time}s</p>
     <p id="result"></p>
 `;
+
+    const answerButtons = document.querySelectorAll('.answerButton');
+    answerButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            answerSelected(button.innerText);
+        });
+    });
+
     startTimer(question.time);
 }
 
@@ -130,11 +138,15 @@ function answerSelected(selectedAnswer) {
     const correctAnswer = questions[currentQuestionIndex].answer;
     const resultElement = document.getElementById("result");
 
-    if (selectedAnswer === correctAnswer) {
+    if (!timeExpired) {
+        if (selectedAnswer === correctAnswer) {
         score++;
         resultElement.innerText = "Correct!";
-    } else {
+        } else {
         resultElement.innerText = "Incorrect!";
+        }
+    } else {
+        resultElement.innerText = "Time's up!"
     }
 
     moveToNextQuestionOrEnd();
@@ -154,18 +166,24 @@ function moveToNextQuestionOrEnd() {
 
 //time expired function
 function handleTimeUp() {
-    document.getElementById("result").innerText = "Time's up! Incorrect!";
+    const resultElement = document.getElementById("result");
+    resultElement.innerText = "Time's up!";
     moveToNextQuestionOrEnd();
-}
 
 //Function to display results screen
 function displayResults() {
     const container = document.getElementById("game-container");
-    container.innerHTML =  `
-    <h2>Game Over! Your Score: ${score}</h2>
-    <button onclick="renderMainMenu()">Return to Menu</button>
+    const resultMessage = score === questions.length ? "You win! Congratulations" : "Game over! You lost!";
+
+    container.innerHTML = `<h2>${resultMessage} Your Score: ${score}</h2>
+    <button id="returnButton">Return to Menu</button>
 `;
+
+
+const returnButton = document.getElementById("returnButton");
+returnButton.addEventListener("click", renderMainMenu);
 }
+
 
 //Initial setup
 
