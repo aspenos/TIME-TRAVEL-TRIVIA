@@ -171,12 +171,14 @@ function handleTimeUp() {
     moveToNextQuestionOrEnd();
 
 //Function to display results screen
+//TODO: ADD RESET BUTTON TO RESULTS SCREEN
 function displayResults() {
     const container = document.getElementById("game-container");
     const resultMessage = score === questions.length ? "You win! Congratulations" : "Game over! You lost!";
 
     container.innerHTML = `<h2>${resultMessage} Your Score: ${score}</h2>
     <button id="returnButton">Return to Menu</button>
+    <button id="resetButton">Restart Game</button>
 `;
 
 
@@ -184,6 +186,7 @@ const returnButton = document.getElementById("returnButton");
 returnButton.addEventListener("click", renderMainMenu);
 }
 
+//TODO: ADD AUDIO
 
 //Initial setup
 
