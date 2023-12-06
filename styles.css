@@ -1,69 +1,71 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #e98070;
+    background-color: #ffffff;
     margin: 0;
     padding 0;
 }
 
 #game-container {
-    max-width
-    margin
-    background-color:
+    max-width:
+    margin:
+    background-color: 
     padding:
     box-shadow
 
+}
+ 
 h1 {
-    color
+    color: #333;
 
 }
 
 button {
-    margin
-    padding 
-    font-size 
-    cursor 
-    background-color 
-    color 
-    border 
-    border-radius 
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
 
 }
 
 button:hover {
-    background-color:
+    background-color: #45a049
 }
 
 u1 {
-    list-style 
-    padding 
+    list-style: none;
+    padding: 0;
 }
 
 li {
-    margin 
+    margin: 10px 0;
 }
 
 button {
-    padding 
-    font-size 
-    cursor 
-    background-color 
-    color 
-    border 
-    border-radius 
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color 
+    background-color: #45a049
 }
 
 #timer {
-    font-size 
-    color 
+    font-size: 18px;
+    color: #333
 }
 
 #result {
-    font-size 
-    font-weight 
-    margin-top 
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
 }
