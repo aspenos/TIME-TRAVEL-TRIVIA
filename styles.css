@@ -1,18 +1,22 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:'Walter Turncoat', cursive;
     text-align: center;
-    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #3498db, #2ecc71);
     margin: 0;
-    padding 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
 }
 
 #game-container {
-    max-width:
-    margin:
-    background-color: 
-    padding:
-    box-shadow
-
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgb(243, 220, 220);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,01);
 }
  
 h1 {
@@ -25,16 +29,25 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
+    font-family:'Walter Turncoat', cursive;
 
 }
 
-button:hover {
+button.correct {
+    background-color: #45a049;
+}
+
+button.incorrect {
+    background-color: #e74c3c;
+}
+
+/* button:hover {
     background-color: #45a049
-}
+} */
 
 u1 {
     list-style: none;
@@ -43,20 +56,30 @@ u1 {
 
 li {
     margin: 10px 0;
+    list-style: none;
 }
 
 button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50
+    background-color: blue;
     color: white;
     border: none;
     border-radius: 5px;
+    font-family:'Walter Turncoat', cursive;
 }
 
+/* button.correct-answer {
+    background-color: green;
+}
+
+button.correct-answer:hover {
+    background-color: green;
+} */
+
 button:hover {
-    background-color: #45a049
+    background-color: gray;
 }
 
 #timer {
@@ -68,4 +91,13 @@ button:hover {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+    font-family:'Walter Turncoat', cursive;
+}
+
+/* #game-container.correct-answer {
+    background-color: #45a049; /* Set background color to green for correct answers */
+
+
+#game-container.incorrect-answer {
+    background-color: #e74c3c; /* Set background color to red for incorrect answers */
 }

@@ -87,9 +87,13 @@ function presentQuestion() {
     `;
 
     const answerButtons = document.querySelectorAll('.answerButton');
+
     answerButtons.forEach(button => {
         button.addEventListener('click', function () {
-            answerSelected(button.innerText);
+            console.log(this)
+            console.log(button.innerText)
+            this.style.backgroundColor='green'
+            answerSelected(this, button.innerText);
         });
     });
 
@@ -106,34 +110,73 @@ function startTimer(seconds) {
         } else {
             timeRemaining--;
         }
-    }, 1000);
+    }, 10000);
 }
 
 function stopTimer() {
     clearInterval(timer);
 }
 
-function answerSelected(selectedAnswer) {
+function answerSelected(buttonElement, selectedAnswer) {
     stopTimer();
     const correctAnswer = questions[currentQuestionIndex].answer;
     const resultElement = document.getElementById("result");
-
-    const timeRemaining = document.getElementById("timer").innerText;
-    const isTimeExpired = parseInt(timeRemaining.split(":")[1]) === 0;
-
+    const isTimeExpired = parseInt(document.getElementById("timer").innerText.split(":")[1]) === 0;
     if (!isTimeExpired) {
         if (selectedAnswer === correctAnswer) {
             score++;
+            buttonElement.style.backgroundColor = "green"; // Change the button's style
             resultElement.innerText = "Correct!";
+            // Delay moving to the next question
+            setTimeout(() => {
+                moveToNextQuestionOrEnd();
+            }, 5000); // Delay of 1 second (1000 milliseconds)
         } else {
             resultElement.innerText = "Incorrect!";
+            buttonElement.style.backgroundColor = "red"; 
+            setTimeout(() => {
+                moveToNextQuestionOrEnd();
+            }, 5000);
+
         }
     } else {
-        resultElement.innerText = "Time's up!";
+        resultElement.innerText = "Time’s up!";
+        moveToNextQuestionOrEnd();
     }
-
-    moveToNextQuestionOrEnd();
 }
+
+// function answerSelected(buttonElement, selectedAnswer) {
+//     stopTimer();
+//     const correctAnswer = questions[currentQuestionIndex].answer;
+//     const resultElement = document.getElementById("result");
+//     const container = document.getElementById("game-container");
+
+//     const timeRemaining = document.getElementById("timer").innerText;
+//     const isTimeExpired = parseInt(timeRemaining.split(":")[1]) === 0;
+
+//     if (!isTimeExpired) {
+//         if (selectedAnswer === correctAnswer) {
+//             console.log(correctAnswer);
+//             // button.style.background.color = "green";
+//             score++;
+//         buttonElement.style.backgroundColor = "green"; 
+//     // declareButtonStyleCorrect(buttonElement);
+//             resultElement.innerText = "Correct!";
+//         } else {
+//             resultElement.innerText = "Incorrect!";
+//         }
+//     } else {
+//         resultElement.innerText = "Time's up!";
+//     }
+
+//     moveToNextQuestionOrEnd();
+// }
+// function declareButtonStyleCorrect(button) {
+//     console.log("changing button color", button);
+//     if (button) {
+//         button.classList.add("correct-answer");
+//     }
+// }
 
 function moveToNextQuestionOrEnd() {
     currentQuestionIndex++;
