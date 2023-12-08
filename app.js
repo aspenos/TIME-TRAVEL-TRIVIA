@@ -8,16 +8,12 @@ let timer;
 const winSound = new Audio("assets/mobile-game-positive-notification-epic-stock-media-1-00-01.mp3");
 const loseSound = new Audio("assets/buzzer-buzzing-single-fascinatedsound-2-00-01.mp3");
 
-function init() {
-    
-}
-
 const generalHistoryQuestions = [
     {
         text: "Which Greek god/goddess was the Parthenon dedicated to?",
         options: ["Aphrodite", "Athena", "Zeus", "Poseidon"],
         answer: "Athena",
-        time: 3
+        time: 15
        
     },
     {
@@ -302,16 +298,12 @@ function displayResults() {
     const resultMessage = score === questions.length ? "Thanks for playing!" : "Thanks for playing!";
     
     container.innerHTML = `
-        <h2>${resultMessage} Your Score: ${score}</h2>
+        <h2>${resultMessage} Your Score: ${score} / ${questions.length}</h2>
         <button id="returnButton">Return to Menu</button>
-        <button id="resetButton">Restart Game</button>
     `;
 
     const returnButton = document.getElementById("returnButton");
     returnButton.addEventListener('click', renderMainMenu);
-
-    const resetButton = document.getElementById("resetButton");
-    resetButton.addEventListener('click', resetGame);
 }
 
 function resetGame() {

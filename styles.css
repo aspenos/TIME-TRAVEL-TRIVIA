@@ -8,6 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+   
 
 }
 
@@ -16,7 +17,8 @@ body {
     margin: 20px auto;
     background-color: rgb(243, 220, 220);
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,01);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
 }
 
 h1 {
