@@ -166,7 +166,6 @@ const generalHistoryQuestions = [
     }
 ];
 
-
 document.addEventListener('DOMContentLoaded', function () {
     renderMainMenu();
 });
@@ -177,11 +176,9 @@ function renderMainMenu() {
         <h1>Time Travel Trivia</h1>
         <button id="startButton">General History</button>
     `;
-
     const startButton = document.getElementById("startButton");
     startButton.addEventListener('click', start);
 }
-
 function start() {
     // questions = []
     questions = generalHistoryQuestions;
@@ -190,7 +187,6 @@ function start() {
     console.log(currentQuestionIndex)
     presentQuestion();
 }
-
 function presentQuestion() {
     const container = document.getElementById("game-container");
     console.log(questions)
@@ -204,7 +200,6 @@ function presentQuestion() {
         <p id="timer">Time Remaining: ${question.time}s</p>
         <p id="result"></p>
     `;
-
     const answerButtons = document.querySelectorAll('.answerButton');
 
     answerButtons.forEach(button => {
@@ -215,10 +210,8 @@ function presentQuestion() {
             answerSelected(this, button.innerText);
         });
     });
-
     startTimer(question.time);
 }
-
 function startTimer(seconds) {
     let timeRemaining = seconds;
     timer = setInterval(() => {
@@ -231,11 +224,9 @@ function startTimer(seconds) {
         }
     }, 1000);
 }
-
 function stopTimer() {
     clearInterval(timer);
 }
-
 function answerSelected(buttonElement, selectedAnswer) {
     stopTimer();
     const correctAnswer = questions[currentQuestionIndex].answer;
@@ -244,22 +235,19 @@ function answerSelected(buttonElement, selectedAnswer) {
     if (!isTimeExpired) {
         if (selectedAnswer === correctAnswer) {
             score++;
-            buttonElement.style.backgroundColor = "green"; // Change the button's style
+            buttonElement.style.backgroundColor = "green";
             resultElement.innerText = "Correct!";
             winSound.play();
-            // Delay moving to the next question
             setTimeout(() => {
                 moveToNextQuestionOrEnd();
-            }, 5000); // Delay of 1 second (1000 milliseconds)
+            }, 5000);
         } else {
-
             resultElement.innerText = "Incorrect!";
             buttonElement.style.backgroundColor = "red"; 
             loseSound.play();
             setTimeout(() => {
                 moveToNextQuestionOrEnd();
             }, 5000);
-
         }
     } else {
         if (seconds === 0) {
@@ -269,10 +257,8 @@ function answerSelected(buttonElement, selectedAnswer) {
             console.log("timeout started");
             moveToNextQuestionOrEnd();
         }, 5000);
-        }
-        
+        }   
 }}
-
 function moveToNextQuestionOrEnd() {
     currentQuestionIndex++;
 
@@ -284,7 +270,6 @@ function moveToNextQuestionOrEnd() {
         console.log(questions);
     }
 }
-
 function handleTimeUp() {
     const resultElement = document.getElementById("result");
     resultElement.innerText = "Time is up!";
@@ -292,7 +277,6 @@ function handleTimeUp() {
     moveToNextQuestionOrEnd();
 }, 5000);
 }
-
 function displayResults() {
     const container = document.getElementById("game-container");
     const resultMessage = score === questions.length ? "Thanks for playing!" : "Thanks for playing!";
@@ -301,11 +285,9 @@ function displayResults() {
         <h2>${resultMessage} Your Score: ${score} / ${questions.length}</h2>
         <button id="returnButton">Return to Menu</button>
     `;
-
     const returnButton = document.getElementById("returnButton");
     returnButton.addEventListener('click', renderMainMenu);
 }
-
 function resetGame() {
     score = 0;
     currentQuestionIndex = 0;

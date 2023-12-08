@@ -7,7 +7,7 @@ Time Travel Trivia is a quiz game that challenges players' knowledge of history.
 
 Technologies Used: 
 
-HTML, CSS, and JavaScript
+HTML, CSS, and JavaScript.
 
 Getting Started: 
 
@@ -42,15 +42,16 @@ https://uppbeat.io/browse/search?query=buzzer&type=sfx
 
 https://uppbeat.io/sfx/tag/buzzer
 
+https://chat.openai.com/
+
 Next Steps: 
 
 Planned future enhancements of this project include: 
-    Broadened quiz variety
+    Broadened quiz variety.
     Wormhole animation between menu, game, and results page. 
-    Click sounds
+    Click sounds.
     Music that plays on the menu and results pages. 
-    Online features
-    Win/lose animations
-    Detailed educational insights following each question answered
-    Ability for players to see the correct answer if they chose the wrong answer
-    
+    Online features.
+    Win/lose animations.
+    Detailed educational insights following each question answered.
+    Ability for players to see the correct answer if they chose the wrong answer.
