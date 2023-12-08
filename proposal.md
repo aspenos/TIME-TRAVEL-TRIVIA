@@ -48,3 +48,42 @@ Create your own table using this markdown table generator website:
 | Wednesday | work on stretch goals                           | Yes      |
 | Thursday  | work on icebox items                            | Yes      |
 | Friday    | present                                         | Yes      |
+
+#### Pseudocode
+
+// Initialize game variables
+let currentCategory = null;
+let questions = [];
+let userAnswers = [];
+let score = 0;
+let currentQuestionIndex = 0;
+
+// Function to initialize the game
+function initGame() {
+    displayMainMenu();
+}
+
+// Additional initialization steps if needed
+function init() {
+    // Perform any additional initialization tasks, such as loading resources
+}
+
+// Event listener for category selection
+function onCategorySelected(selectedCategory) {
+    currentCategory = selectedCategory;
+    loadQuestionsForCategory(currentCategory);
+}
+
+// Function to load questions for the selected category
+function loadQuestionsForCategory(category) {
+    questions = loadQuestionsFromAPI(category);
+    presentQuestion(questions[currentQuestionIndex]);
+}
+
+// ... (other functions related to game logic)
+
+// Call the initialization function when the page loads
+window.onload = function () {
+    init();
+    initGame();
+};
