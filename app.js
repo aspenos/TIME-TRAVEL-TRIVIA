@@ -17,7 +17,7 @@ const generalHistoryQuestions = [
         text: "Which Greek god/goddess was the Parthenon dedicated to?",
         options: ["Aphrodite", "Athena", "Zeus", "Poseidon"],
         answer: "Athena",
-        time: 15
+        time: 3
        
     },
     {
@@ -121,7 +121,7 @@ const generalHistoryQuestions = [
         time: 15
     },
     {
-        text: "Aztect civilization originated from which country?",
+        text: "Aztec civilization originated from which country?",
         options: ["Mexico", "Colombia", "Guatemala", "Costa Rica"],
         answer: "Mexico",
         time: 15
@@ -256,6 +256,7 @@ function answerSelected(buttonElement, selectedAnswer) {
                 moveToNextQuestionOrEnd();
             }, 5000); // Delay of 1 second (1000 milliseconds)
         } else {
+
             resultElement.innerText = "Incorrect!";
             buttonElement.style.backgroundColor = "red"; 
             loseSound.play();
@@ -265,43 +266,16 @@ function answerSelected(buttonElement, selectedAnswer) {
 
         }
     } else {
-        resultElement.innerText = "Time’s up!";
-        moveToNextQuestionOrEnd();
-    }
-}
-
-// function answerSelected(buttonElement, selectedAnswer) {
-//     stopTimer();
-//     const correctAnswer = questions[currentQuestionIndex].answer;
-//     const resultElement = document.getElementById("result");
-//     const container = document.getElementById("game-container");
-
-//     const timeRemaining = document.getElementById("timer").innerText;
-//     const isTimeExpired = parseInt(timeRemaining.split(":")[1]) === 0;
-
-//     if (!isTimeExpired) {
-//         if (selectedAnswer === correctAnswer) {
-//             console.log(correctAnswer);
-//             // button.style.background.color = "green";
-//             score++;
-//         buttonElement.style.backgroundColor = "green"; 
-//     // declareButtonStyleCorrect(buttonElement);
-//             resultElement.innerText = "Correct!";
-//         } else {
-//             resultElement.innerText = "Incorrect!";
-//         }
-//     } else {
-//         resultElement.innerText = "Time's up!";
-//     }
-
-//     moveToNextQuestionOrEnd();
-// }
-// function declareButtonStyleCorrect(button) {
-//     console.log("changing button color", button);
-//     if (button) {
-//         button.classList.add("correct-answer");
-//     }
-// }
+        if (seconds === 0) {
+            resultElement.innerText = "Time is up!";
+        loseSound.play();
+        setTimeout(() => {
+            console.log("timeout started");
+            moveToNextQuestionOrEnd();
+        }, 5000);
+        }
+        
+}}
 
 function moveToNextQuestionOrEnd() {
     currentQuestionIndex++;
@@ -317,13 +291,15 @@ function moveToNextQuestionOrEnd() {
 
 function handleTimeUp() {
     const resultElement = document.getElementById("result");
-    resultElement.innerText = "Time's up! Incorrect!";
+    resultElement.innerText = "Time is up!";
+    setTimeout(() => {
     moveToNextQuestionOrEnd();
+}, 5000);
 }
 
 function displayResults() {
     const container = document.getElementById("game-container");
-    const resultMessage = score === questions.length ? "Congratulations! You won!" : "Game Over! You lost!";
+    const resultMessage = score === questions.length ? "Thanks for playing!" : "Thanks for playing!";
     
     container.innerHTML = `
         <h2>${resultMessage} Your Score: ${score}</h2>
