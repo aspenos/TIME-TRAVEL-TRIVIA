@@ -182,18 +182,13 @@ function renderMainMenu() {
 function start() {
     // questions = []
     questions = generalHistoryQuestions;
-    console.log(questions)
     currentQuestionIndex = 0;
-    console.log(currentQuestionIndex)
     presentQuestion();
 }
 function presentQuestion() {
     const container = document.getElementById("game-container");
-    console.log(questions)
     const question = questions[currentQuestionIndex];
-    console.log(question)
     const options = question.options.map(option => `<li><button class="answerButton">${option}</button></li>`).join("");
-    console.log(options)
     container.innerHTML = `
         <h2>${question.text}</h2>
         <ul>${options}</ul>
@@ -204,8 +199,6 @@ function presentQuestion() {
 
     answerButtons.forEach(button => {
         button.addEventListener('click', function () {
-            console.log(this)
-            console.log(button.innerText)
             this.style.backgroundColor='green'
             answerSelected(this, button.innerText);
         });
@@ -254,7 +247,6 @@ function answerSelected(buttonElement, selectedAnswer) {
             resultElement.innerText = "Time is up!";
         loseSound.play();
         setTimeout(() => {
-            console.log("timeout started");
             moveToNextQuestionOrEnd();
         }, 5000);
         }   
@@ -264,10 +256,8 @@ function moveToNextQuestionOrEnd() {
 
     if (currentQuestionIndex < questions.length) {
         presentQuestion();
-        console.log(questions);
     } else {
         displayResults();
-        console.log(questions);
     }
 }
 function handleTimeUp() {

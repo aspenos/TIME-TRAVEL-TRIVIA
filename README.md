@@ -15,13 +15,13 @@ https://timetraveltrivia.netlify.app/
 
 WireFrames/ Screenshots: 
 
-Early screenshots of Time Travel Trivia's menu, gameplay, and results pages. 
+Screenshots of Time Travel Trivia's menu, gameplay, and results pages. 
 
-<img width="752" alt="Menu Screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/3c441477-de76-4740-8fb6-7f1f01a351ef">
+![Alt text](assets/menu.png)
 
-<img width="751" alt="Game screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/58bd98c5-cd47-4a96-8f67-953d9c994424">
+![Alt text](assets/game.png)
 
-<img width="750" alt="Results screen" src="https://github.com/aspenos/TIME-TRAVEL-TRIVIA/assets/149289289/f2d83ac7-eb8c-49c5-a814-d6f2972572a8">
+![Alt text](assets/results.png)
 
 Timeline: Give us a table with all the project dates, MVP items meant for that day, whether you met your goal Y/N, and any notes about those items
 
